@@ -37,8 +37,8 @@ def remove_missing_glyph_references(font_path, missing_glyphs):
     print(f"References to missing glyphs have been removed. Saved as {fixed_font_path}.")
 
 # Define the font file path and missing glyphs
-font_path = '/workspaces/Mengshen-pinyin-font/res/fonts/han-serif/WenQuanYiMicroHei-Reduced.ttf'
-missing_glyphs = ['uniFA0C', 'uniFA0D']  # Remove the '/' as glyph names do not include it
+font_path = '/workspaces/Mengshen-pinyin-font/res/fonts/han-serif/WenQuanYiMicroHeiMono-Reduced.ttf'
+missing_glyphs = ['uniFA0C', 'uniFA0D',]  # Remove the '/' as glyph names do not include it
 
 # Remove missing glyph references
 remove_missing_glyph_references(font_path, missing_glyphs)

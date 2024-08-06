@@ -27,8 +27,8 @@ def main(args=None):
         FONT_TYPE       = config.HAN_SERIF_TYPE
         FONT_FOR_MAIN   = config.HAN_SERIF_MAIN
         FONT_FOR_PINYIN = config.HAN_SERIF_PINYIN
-        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Catus-Pinyin-Serif_v3.0.ttf")
-        FONT_NAME = "Catus Pinyin Sans 3.0"
+        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Catus-Pinyin-Serif_v4.0.ttf")
+        FONT_NAME = "Catus Pinyin Sans 4.0"
     elif options.style == "handwritten":
         FONT_TYPE = config.HANDWRITTEN_TYPE
         FONT_FOR_MAIN   = config.HAN_HANDWRITTEN_MAIN
