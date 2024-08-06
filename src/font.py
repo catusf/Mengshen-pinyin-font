@@ -129,14 +129,18 @@ class Font():
         for (hanzi, pinyins) in utility.get_has_single_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                # raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
             cid = utility.convert_str_hanzi_2_cid(hanzi)
             self.marged_font["cmap_uvs"]["{0} {1}".format(str_oct_unicode, IVS)] = "{}.ss00".format(cid)
         
         for (hanzi, pinyins) in utility.get_has_multiple_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                # raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
             cid = utility.convert_str_hanzi_2_cid(hanzi)
             # ss00 は ピンインのないグリフ なので、ピンインのグリフは "ss{:02}".format(len) まで
             for i in range( len(pinyins)+1 ):
@@ -156,14 +160,19 @@ class Font():
         for (hanzi, pinyins) in utility.get_has_single_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {:x}".format(int(str_oct_unicode)))
+                # raise Exception("グリフが見つかりません.\n  unicode: {:x}".format(int(str_oct_unicode)))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
+
             cid = utility.convert_str_hanzi_2_cid(hanzi)
             set_glyph_order.add("{}.ss00".format(cid))
 
         for (hanzi, pinyins) in utility.get_has_multiple_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {:x}".format(int(str_oct_unicode)))
+                # raise Exception("グリフが見つかりません.\n  unicode: {:x}".format(int(str_oct_unicode)))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
             # ss00 は ピンインのないグリフ なので、ピンインのグリフは "ss{:02}".format(len) まで
             for i in range( len(pinyins)+1 ):
                 cid = utility.convert_str_hanzi_2_cid(hanzi)
@@ -244,7 +253,9 @@ class Font():
         for (hanzi, pinyins) in utility.get_has_single_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                # raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
             if self.is_added_glyf_4_duplicate_definition_of_hanzi(str_oct_unicode):
                 continue
             cid = utility.convert_str_hanzi_2_cid(hanzi)
@@ -262,7 +273,9 @@ class Font():
         for (hanzi, pinyins) in utility.get_has_multiple_pinyin_hanzi():
             str_oct_unicode = str(ord(hanzi))
             if not (str_oct_unicode in self.marged_font["cmap"]):
-                raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                # raise Exception("グリフが見つかりません.\n  unicode: {}".format(str_oct_unicode))
+                print(f'Glyf not found {hanzi} {pinyins}')
+                continue
             if self.is_added_glyf_4_duplicate_definition_of_hanzi(str_oct_unicode):
                 continue
             cid = utility.convert_str_hanzi_2_cid(hanzi)
@@ -343,17 +356,35 @@ class Font():
         print(cmd)
         shell.process(cmd)
 
-    def build(self, OUTPUT_FONT):
+    def count_output_glyphs(self):
+        return len(self.marged_font["glyf"])
+
+    def count_input_glyphs(self):
+        return len(self.marged_font["cmap"])
+
+    def change_font_name(self, fontname, fontfile):
+        cmd = "python src/fontname.py {} {}".format(f'"{fontname}"', fontfile)
+        print(cmd)
+        shell.process(cmd)
+
+    def build(self, fontname, OUTPUT_FONT):
         self.add_cmap_uvs()
         print("cmap_uvs table を追加完了")
         self.add_glyph_order()
         print("glyph_order table を追加完了")
         self.add_glyf()
         print("glyf table を追加完了")
-        self.add_GSUB()
-        print("GSUB table を追加完了")
+        # self.add_GSUB()
+        # print("GSUB table を追加完了")
         self.set_about_size()
         self.set_copyright()
+
+        print(f'Number of input glyphs: {self.count_input_glyphs()}')
+        print(f'Number of output glyphs: {self.count_output_glyphs()}')
         TAMPLATE_MARGED_JSON = os.path.join(p.DIR_TEMP, "template.json")
         self.save_as_json(TAMPLATE_MARGED_JSON)
         self.convert_json2otf(TAMPLATE_MARGED_JSON, OUTPUT_FONT)
+
+        self.change_font_name(fontname, OUTPUT_FONT)
+    
+        pass

@@ -20,7 +20,7 @@ METADATA_FOR_HAN_SERIF = {
         "height": 1000, # 基準にする漢字の表示部の高さ
     },
     # ピンインが 5~6 文字以上(最大は6のはず)のとき、文字が重なることがある。この時にx軸を縮小して重なりを避けるモード
-    "is_avoid_overlapping_mode": False, 
+    "is_avoid_overlapping_mode": True, 
     "x_scale_reduction_for_avoid_overlapping": 0.1 # 上記のモードの際に x軸をどれだけ縮小するか
 }
 
@@ -42,8 +42,8 @@ METADATA_FOR_HANDWRITTEN = {
 
 
 # using font name
-HAN_SERIF_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "SourceHanSerifCN-Regular.ttf") )
-HAN_SERIF_PINYIN = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "mplus-1m-medium.ttf") )
+HAN_SERIF_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "LXGWWenKaiMono-Regular.ttf") )
+HAN_SERIF_PINYIN = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "LXGWWenKaiMono-Regular.ttf") )
 
 HAN_HANDWRITTEN_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HANDWRITTEN, "XiaolaiMonoSC-without-Hangul-Regular.ttf") )
 HAN_HANDWRITTEN_PINYIN = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HANDWRITTEN, "latin-alpabet-of-SetoFont-SP.ttf") )

@@ -27,13 +27,14 @@ def main(args=None):
         FONT_TYPE       = config.HAN_SERIF_TYPE
         FONT_FOR_MAIN   = config.HAN_SERIF_MAIN
         FONT_FOR_PINYIN = config.HAN_SERIF_PINYIN
-        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Mengshen-HanSerif.ttf")
+        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Catus-Pinyin-Serif_v1.0.ttf")
+        FONT_NAME = "Catus Pinyin Sans 1.0"
     elif options.style == "handwritten":
         FONT_TYPE = config.HANDWRITTEN_TYPE
         FONT_FOR_MAIN   = config.HAN_HANDWRITTEN_MAIN
         FONT_FOR_PINYIN = config.HAN_HANDWRITTEN_PINYIN
         OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Mengshen-Handwritten.ttf")
-        OUTPUT_FONT
+        FONT_NAME = "Catus Pinyin Handwritten"
     else:
         pass
 
@@ -55,7 +56,7 @@ def main(args=None):
     font = ft.Font( TAMPLATE_MAIN_JSON, TAMPLATE_GLYF_JSON, ALPHABET_FOR_PINYIN_JSON, \
                     PATTERN_ONE_TXT, PATTERN_TWO_JSON, EXCEPTION_PATTERN_JSON, FONT_TYPE )
     # glyf に追加するpinyin の種類は、mapping_table に準拠する
-    font.build(OUTPUT_FONT)
+    font.build(FONT_NAME, OUTPUT_FONT)
     
 if __name__ == "__main__":
     sys.exit(main())
