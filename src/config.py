@@ -42,7 +42,7 @@ METADATA_FOR_HANDWRITTEN = {
 
 
 # using font name
-HAN_SERIF_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "LXGWWenKaiMono-Regular.ttf") )
+HAN_SERIF_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "WenQuanYiMicroHei-Reduced_fixed.ttf") )
 HAN_SERIF_PINYIN = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HAN_SERIF, "LXGWWenKaiMono-Regular.ttf") )
 
 HAN_HANDWRITTEN_MAIN   = os.path.normpath( os.path.join(path.DIR_FONT_FOR_HANDWRITTEN, "XiaolaiMonoSC-without-Hangul-Regular.ttf") )

@@ -9,3 +9,6 @@ tmp/cmap.json
 tools/SVGCleaner.app
 tools/ttf2ufo.pe
 tools/ufo2ttf.pe
+tmp/json/alphabet4pinyin.json
+tmp/json/output_for_pinyin.json
+tmp/json/template_main.json
