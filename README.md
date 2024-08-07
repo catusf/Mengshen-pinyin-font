@@ -1,3 +1,20 @@
+# Introduction
+This project aims to create high-quality Pinyin fonts to help learn the Chinese language.
+
+It is based on [Mengshen-pinyin-font](https://github.com/MaruTama/Mengshen-pinyin-font) awesome project.
+
+You can use this project to generate your own Pinyin fonts, with 2 based fonts: one for Chinese characters, and one for Pinyins (or you can reuse one here). 
+
+Download ready-to-use font at the [Release](https://github.com/catusf/pinyin-fonts/releases) link.
+
+## Sample images
+
+![Sample_Pinyin-Catus-Sans](./outputs/Sample_Pinyin-Catus-Sans-1.0.png)
+![Sample_Pinyin-Tigris-Sans](./outputs/Sample_Pinyin-Tigris-Sans-1.0.png)
+![Sample_Pinyin-Leo-Serif](./outputs/Sample_Pinyin-Leo-Serif-1.0.png)
+![Sample_Pinyin-Onca-Handwritten](./outputs/Sample_Pinyin-Onca-Handwritten-1.0.png)
+
+
 # Mengshen(萌神)-pinyin(拼音)-font
 OSS の多音字に対応した拼音フォント及びその作成ツールです。 / OpenSource Pinyin font and creation tool that supports homograph (多音字).
 
