@@ -1,23 +1,13 @@
 Todo list
-[ ] Add Vietnamese chars
-[ ] Design input, output for easier adding new typeface
-[ ] Add bottom option
-[ ] Copy all glyphs from fonts
-[ ] Adjust width for long pinyins
-[ ] Add Vertical option
-[ ] Add rotated option
-[ ] Fix Vietnamese char wrong: ơ o7
 
-Release now:
-- Base LXGWWenKaiMono + Pinyin LXGWWenKaiMono
-- Base Micro Hei + Pinyin LXGWWenKaiMono
-- Base Micro Hei Mono + Pinyin LXGWWenKaiMono
+[X] Design input, output for easier adding new typeface
+[ ] Add bottom option
+[ ] Add rotated options
+[ ] Add Source Han Sans/Serif, probably the most comprehensive and opensource Han fonts, now build has errors (circular reference)
+[X] Copy all glyphs from fonts
+[X] Adjust width for long pinyins
+[X] Fix Vietnamese char wrong in Micro Hei: ơ o7
 
 Step to fix Micro Hei  issues:
-- Delete các None-Unicode glyphs (14000+)
+- Delete None-Unicode glyphs (14000+)
 - Fix deleted referenced glyphs: 'uniFA0C', 'uniFA0D'
-
-
-What works
-- File gốc Mengshen ok
-- File font Chinese dùng của ToneOZ ("C:\Users\ITFDL\OneDrive - FPT Corporation\Personal\Playground\Mengshen-pinyin-font\res\fonts\han-serif\LXGWWenKaiMono-Regular.ttf") cho cả Chinese và pinyin
