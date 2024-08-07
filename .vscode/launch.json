@@ -6,7 +6,7 @@
             "type": "python",
             "request": "launch",
             "program": "src/main.py",
-            "args": ["--style", "tigris"],
+            "args": ["--style", "leo"],
             "console": "integratedTerminal"
         }
     ]

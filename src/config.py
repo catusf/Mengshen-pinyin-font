@@ -50,8 +50,8 @@ font_configs = {
         },
     },
     "leo": {
-        "font_name": "Pinyin Leo Sans 1.0",
-        "output_font": "Pinyin-Leo-Sans_v1.0.ttf",
+        "font_name": "Pinyin Leo Serif 1.0",
+        "output_font": "Pinyin-Leo-Serif_v1.0.ttf",
         "main_font_path": "LXGWWenKaiMono-Regular.ttf",
         "pinyin_font_path": "LXGWWenKaiMono-Regular.ttf",
 
