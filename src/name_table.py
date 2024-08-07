@@ -34,7 +34,7 @@ VERSION = 1.03
    14: ライセンス情報の URL
   '''
 
-HAN_SERIF = [
+NAME_TABLE = [
   # Macintosh
   {
     "platformID": 1,

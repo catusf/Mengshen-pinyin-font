@@ -19,7 +19,7 @@ class PinyinGlyph():
     
 
     # マージ先のフォントのメインjson（フォントサイズを取得するため）, ピンイン表示に使うためのglyfのjson, ピンインのグリフを追加したjson(出力ファイル)
-    def __init__(self, TAMPLATE_MAIN_JSON, ALPHABET_FOR_PINYIN_JSON, FONT_TYPE):
+    def __init__(self, TAMPLATE_MAIN_JSON, ALPHABET_FOR_PINYIN_JSON, FONT_STYLE):
         self.PINYIN_MAPPING_TABLE = pg.get_pinyin_table_with_mapping_table()
 
         with open(TAMPLATE_MAIN_JSON, "rb") as read_file:
@@ -28,14 +28,7 @@ class PinyinGlyph():
         with open(ALPHABET_FOR_PINYIN_JSON, "rb") as read_file:
             self.PY_ALPHABET_GLYF = orjson.loads(read_file.read())
 
-        if FONT_TYPE == config.HAN_SERIF_TYPE:
-            # 想定する漢字のサイズに対するピンイン表示部のサイズ
-            # # 前作より引用
-            self.METADATA_FOR_PINYIN = config.METADATA_FOR_HAN_SERIF
-        elif FONT_TYPE == config.HANDWRITTEN_TYPE:
-            self.METADATA_FOR_PINYIN = config.METADATA_FOR_HANDWRITTEN
-        else:
-            pass
+        self.METADATA_FOR_PINYIN = config.font_configs[FONT_STYLE]["metadata"]
         
         # 発音の参照をもつ e.g.: {"làng":ref}
         self.pronunciations = {}

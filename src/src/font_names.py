@@ -1,4 +1,6 @@
-sorted_cat_names = {
+cat_names = {
+    "Felis Catus": {"Vietnamese": "Mèo nhà", "English": "Domestic Cat", "Short Name": "Catus"},
+    "Panthera Tigris": {"Vietnamese": "Hổ", "English": "Tiger", "Short Name": "Tigris"},
     "Panthera Leo": {"Vietnamese": "Sư tử", "English": "Lion", "Short Name": "Leo"},
     "Panthera Onca": {"Vietnamese": "Báo đốm Mỹ", "English": "Jaguar", "Short Name": "Onca"},
     "Lynx Lynx": {"Vietnamese": "Linh miêu Á-Âu", "English": "Eurasian Lynx", "Short Name": "Lynx"},
@@ -8,8 +10,6 @@ sorted_cat_names = {
     "Catopuma Badia": {"Vietnamese": "Mèo bay", "English": "Bay Cat", "Short Name": "Badia"},
     "Caracal Aurata": {"Vietnamese": "Mèo vàng châu Phi", "English": "African Golden Cat", "Short Name": "Aurata"},
     "Panthera Atrox": {"Vietnamese": "Sư tử châu Mỹ", "English": "American Lion", "Short Name": "Atrox"},
-    "Panthera Tigris": {"Vietnamese": "Hổ", "English": "Tiger", "Short Name": "Tigris"},
-    "Felis Catus": {"Vietnamese": "Mèo nhà", "English": "Domestic Cat", "Short Name": "Catus"},
     "Leptailurus Serval": {"Vietnamese": "Mèo Serval", "English": "Serval", "Short Name": "Serval"},
     "Prionailurus Bengalensis": {"Vietnamese": "Mèo gấm", "English": "Leopard Cat", "Short Name": "Bengal"},
     "Panthera Pardus": {"Vietnamese": "Báo hoa mai", "English": "Leopard", "Short Name": "Pardus"},

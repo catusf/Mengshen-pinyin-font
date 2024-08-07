@@ -332,13 +332,8 @@ class Font():
         now_time  = datetime.now().timestamp() 
         self.marged_font["head"]["created"] = round( now_time - base_time )
         # フォント名等を設定
-        if self.FONT_TYPE == config.HAN_SERIF_TYPE:
-            self.marged_font["name"] = name_table.HAN_SERIF
-        elif self.FONT_TYPE == config.HANDWRITTEN_TYPE:
-            self.marged_font["name"] = name_table.HANDWRITTEN
-        else:
-            pass
-
+        
+        self.marged_font["name"] = name_table.NAME_TABLE
 
     def load_json(self):
         with open(self.TAMPLATE_MAIN_JSON, "rb") as read_file:

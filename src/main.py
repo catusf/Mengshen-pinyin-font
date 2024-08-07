@@ -14,30 +14,28 @@ import path as p
 import config
 import make_template_jsons
 import retrieve_latin_alphabet
+import path
 
 def parse_args(args):
     parser = argparse.ArgumentParser(
-        description="Select font style (\"han_serif\" or \"handwritten\")")
-    parser.add_argument('-t', '--style', choices=['han_serif', 'handwritten'], default='han_serif')
+        description="Select font name to generate (catus/tigris/leo/onca)")
+    parser.add_argument('-t', '--style', choices=['catus','tigris', 'leo', 'onca'], default='leo')
     return parser.parse_args(args)
-
+# Display the configurations
+import pprint
 def main(args=None):
     options = parse_args(args)
-    if options.style == "han_serif":
-        FONT_TYPE       = config.HAN_SERIF_TYPE
-        FONT_FOR_MAIN   = config.HAN_SERIF_MAIN
-        FONT_FOR_PINYIN = config.HAN_SERIF_PINYIN
-        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Catus-Pinyin-Serif_v4.0.ttf")
-        FONT_NAME = "Catus Pinyin Sans 4.0"
-    elif options.style == "handwritten":
-        FONT_TYPE = config.HANDWRITTEN_TYPE
-        FONT_FOR_MAIN   = config.HAN_HANDWRITTEN_MAIN
-        FONT_FOR_PINYIN = config.HAN_HANDWRITTEN_PINYIN
-        OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, "Mengshen-Handwritten.ttf")
-        FONT_NAME = "Catus Pinyin Handwritten"
-    else:
-        pass
+    style = options.style
+    meta = config.font_configs[style]
+    # if options.style == "han_serif":
+    
+    pprint.pprint(meta)
 
+    FONT_FOR_MAIN   = os.path.normpath(os.path.join(path.DIR_FONT, meta['main_font_path']))
+    FONT_FOR_PINYIN = os.path.normpath(os.path.join(path.DIR_FONT, meta['pinyin_font_path']))
+    OUTPUT_FONT     = os.path.join(p.DIR_OUTPUT, meta["output_font"])
+    FONT_NAME       = meta['font_name']
+    
     # font (otf/ttf)を編集可能な json にダンプする
     make_template_jsons.make_template(FONT_FOR_MAIN)
     retrieve_latin_alphabet.make_alphabet_glyf_json(FONT_FOR_PINYIN)
@@ -54,7 +52,7 @@ def main(args=None):
     EXCEPTION_PATTERN_JSON   = os.path.join(p.DIR_OUTPUT, "duoyinzi_exceptional_pattern.json")
 
     font = ft.Font( TAMPLATE_MAIN_JSON, TAMPLATE_GLYF_JSON, ALPHABET_FOR_PINYIN_JSON, \
-                    PATTERN_ONE_TXT, PATTERN_TWO_JSON, EXCEPTION_PATTERN_JSON, FONT_TYPE )
+                    PATTERN_ONE_TXT, PATTERN_TWO_JSON, EXCEPTION_PATTERN_JSON, style )
     # glyf に追加するpinyin の種類は、mapping_table に準拠する
     font.build(FONT_NAME, OUTPUT_FONT)
     

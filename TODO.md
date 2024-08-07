@@ -6,6 +6,7 @@ Todo list
 [ ] Adjust width for long pinyins
 [ ] Add Vertical option
 [ ] Add rotated option
+[ ] Fix Vietnamese char wrong: ơ o7
 
 Release now:
 - Base LXGWWenKaiMono + Pinyin LXGWWenKaiMono
