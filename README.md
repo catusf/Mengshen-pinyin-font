@@ -3,9 +3,9 @@ This project aims to create high-quality Pinyin fonts to help learn the Chinese 
 
 It is based on [Mengshen-pinyin-font](https://github.com/MaruTama/Mengshen-pinyin-font) awesome project.
 
-You can use this project to generate your own Pinyin fonts, with 2 based fonts: one for Chinese characters, and one for Pinyins (or you can reuse one here). 
+Download ready-to-use fonts at the [Release](https://github.com/catusf/pinyin-fonts/releases) link.
 
-Download ready-to-use font at the [Release](https://github.com/catusf/pinyin-fonts/releases) link.
+You can use this project to generate your own Pinyin fonts, with 2 based fonts: one for Chinese characters, and one for Pinyins (or you can reuse one here). Start by editing [config.py](./src/config.py) to make a new font.
 
 ## Sample images
 
