@@ -7,6 +7,8 @@ Download ready-to-use fonts at the [Release](https://github.com/catusf/pinyin-fo
 
 You can use this project to generate your own Pinyin fonts, with 2 based fonts: one for Chinese characters, and one for Pinyins (or you can reuse one here). Start by editing [config.py](./src/config.py) to make a new font.
 
+Names of fonts released in this project will be named after [cat family members](https://en.wikipedia.org/wiki/Felidae) like [these](./tools/names.py).
+
 ## Sample images
 
 ![Sample_Pinyin-Catus-Sans](./outputs/Sample_Pinyin-Catus-Sans-1.0.png)
