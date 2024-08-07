@@ -2,6 +2,17 @@ from PIL import Image, ImageDraw, ImageFont
 from fontTools.ttLib import TTFont
 import os
 
+import sys
+
+import os
+
+# Get the directory of the current file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Add the path to the modules directory to the system path
+modules_dir = os.path.join(current_dir, '../src')
+sys.path.append(modules_dir)
+
 # Import font configurations from the config file
 from config import font_configs
 
