@@ -62,7 +62,7 @@ def generate_images_from_configs():
     for label, config in font_configs.items():
         font_path = os.path.join(output_dir, config['output_font'])
         image = create_image_with_text(font_path, text, image_size, background_color, text_color)
-        image.save(os.path.join(output_dir, f'text_image_{label}.png'))
+        image.save(os.path.join(output_dir, f'sample_{label}.png'))
     print("Images have been created and saved successfully.")
 
 # Call the main function
